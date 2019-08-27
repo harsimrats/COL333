@@ -1,0 +1,71 @@
+[System]
+Name='Assignment4'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=21
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Academics'
+Range=[0 10]
+NumMFs=4
+MF1='Poor':'trapmf',[0 0 4 6]
+MF2='Average':'trapmf',[4 6 6.5 8]
+MF3='Good':'trapmf',[6.5 7.5 9 10]
+MF4='Excellent':'trapmf',[8.5 9 10 10]
+
+[Input2]
+Name='Sports'
+Range=[0 100]
+NumMFs=4
+MF1='Poor':'gaussmf',[4 0]
+MF2='Average':'gaussmf',[5 5]
+MF3='Good':'gaussmf',[4 10]
+MF4='Excellent':'smf',[15 25]
+
+[Input3]
+Name='Co-curricular'
+Range=[0 100]
+NumMFs=4
+MF1='Poor':'gaussmf',[4 0]
+MF2='Average':'gaussmf',[5 5]
+MF3='Good':'gaussmf',[4 10]
+MF4='Excellent':'smf',[10 25]
+
+[Output1]
+Name='Performance'
+Range=[0 10]
+NumMFs=4
+MF1='Poor':'trapmf',[0 0 2 5]
+MF2='Average':'trapmf',[4 5 6 7]
+MF3='Good':'trapmf',[6 7 8 9]
+MF4='Excellent':'trapmf',[8 9 10 10]
+
+[Rules]
+1 0 0, 1 (1) : 1
+2 1 1, 1 (1) : 1
+2 4 0, 2 (1) : 1
+2 0 4, 2 (1) : 1
+2 2 -4, 2 (1) : 1
+2 -4 2, 2 (1) : 1
+4 -1 -1, 4 (1) : 1
+4 1 -4, 3 (1) : 1
+4 -4 1, 3 (1) : 1
+4 0 4, 4 (1) : 1
+4 4 0, 4 (1) : 1
+2 2 4, 3 (1) : 1
+2 4 2, 3 (1) : 1
+3 4 4, 4 (1) : 1
+3 -4 4, 3 (1) : 1
+3 4 -4, 3 (1) : 1
+3 1 1, 2 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 3, 3 (1) : 1
+3 2 2, 3 (1) : 1
